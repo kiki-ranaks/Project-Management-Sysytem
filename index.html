@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Project Management System</h1>
+    </header>
+    <main>
+        <section class="project-section">
+            <h2>Projects</h2>
+            <button id="addProjectBtn">Add Project</button>
+            <div id="projects">
+                <!-- Project cards will be added here -->
+            </div>
+        </section>
+        <section class="task-section">
+            <h2>Tasks</h2>
+            <button id="addTaskBtn" disabled>Add Task</button>
+            <div id="tasks">
+                <!-- Task cards will be added here -->
+            </div>
+        </section>
+        <section class="kanban-section">
+            <h2>Kanban Board</h2>
+            <div class="kanban">
+                <div class="kanban-column" id="todo">
+                    <h3>To Do</h3>
+                </div>
+                <div class="kanban-column" id="inProgress">
+                    <h3>In Progress</h3>
+                </div>
+                <div class="kanban-column" id="done">
+                    <h3>Done</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Modals for adding and updating projects and tasks -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="projectModalTitle">Add Project</h2>
+            <input type="hidden" id="projectId">
+            <input type="text" id="projectName" placeholder="Project Name" required>
+            <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+            <button id="saveProjectBtn">Save</button>
+        </div>
+    </div>
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="taskModalTitle">Add Task</h2>
+            <input type="hidden" id="taskId">
+            <select id="taskProject">
+                <!-- Project options will be added here -->
+            </select>
+            <input type="text" id="taskName" placeholder="Task Name" required>
+            <input type="date" id="taskDeadline" required>
+            <select id="taskAssignee">
+                <option value="Member1">Member1</option>
+                <option value="Member2">Member2</option>
+                <option value="Member3">Member3</option>
+            </select>
+            <button id="saveTaskBtn">Save</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
